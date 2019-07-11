@@ -7,7 +7,7 @@ Liz Mahoney
 ## Deployed Link
 
 https://kq3emr6iib.execute-api.us-west-2.amazonaws.com/repeatedWord?inputWord=summer%20it%20is%20summer
-    - The above link should return summer.
+    - The above link should return `summer`.
 
 
 ## Getting Started
@@ -15,9 +15,16 @@ https://kq3emr6iib.execute-api.us-west-2.amazonaws.com/repeatedWord?inputWord=su
 ***Create A jar file***
 Run : `./gradlew jar`
 
-In build.gradle:
-- add this to bottom of file:
-    - 
+***In build.gradle***
+** Make sure this application is Java 8 before uploading to AWS lambda!
+- Add this to bottom of file:
+
+    ```
+    apply plugin: 'java'
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+    ```
+    
 Find it in `build` > `libs` > `lambda_api_gateway.jar`
 
 Go to AWS Lambda console
